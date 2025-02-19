@@ -57,7 +57,7 @@ public class Main {
         // maximumPoolSize 是最大线程数 不够的时候最多添加到几个线程
         // keepAliveTime 是线程空闲时间 非核心线程在空闲时间超过这个时间就会被回收
         // unit 是时间单位
-        // workQueue 是阻塞队列 存放提交了但是还没有执行的任务 一个缓冲区
+        // workQueue 是阻塞队列 存放提交了但是还没有执行的任务 一个缓冲区 一般用LinkedBlockingQueue
         // threadFactory 是线程工厂
         // handler 是饱和处理机制 就是当线程池满了之后的处理策略
 
@@ -80,6 +80,8 @@ public class Main {
         // CallerRunsPolicy 由调用线程处理该任务
         // DiscardOldestPolicy 抛弃队列中等待最久的任务
         // DiscardPolicy 直接抛弃任务
+        // 还可以自己实现RejectedExecutionHandler接口来自定义饱和策略
+        
 
     }
 }
