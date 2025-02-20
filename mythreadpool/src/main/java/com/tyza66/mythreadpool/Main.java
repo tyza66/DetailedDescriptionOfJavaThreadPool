@@ -81,7 +81,7 @@ public class Main {
         // DiscardOldestPolicy 抛弃队列中等待最久的任务
         // DiscardPolicy 直接抛弃任务
         // 还可以自己实现RejectedExecutionHandler接口来自定义饱和策略
-        
+
 
     }
 }
