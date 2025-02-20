@@ -10,7 +10,7 @@ public class AllFunctionTest {
         // Executors.newCachedThreadPool() 相当于核心线程数是0 用的时候才创建
         // Executors.newFixedThreadPool(10) 固定线程数的线程池
         // Executors.newSingleThreadExecutor() 单线程的线程池
-        // Executors.newScheduledThreadPool(10) 定时任务的线程池
+        // Executors.newScheduledThreadPool(10) 定时任务的线程池 带调度功能 提交的任务可以延迟执行或者周期执行
         // Executors.newWorkStealingPool() 工作窃取线程池
         // Executors.newSingleThreadScheduledExecutor() 单线程的定时任务线程池
 
