@@ -152,6 +152,7 @@ public class MyThreadPoolExecutor {
                 while (task != null || (task = getTask()) != null) {  // 线程会不会被销毁的关键就在getTask方法中
                     // 在Java的ThreadPoolExecutor中,线程池中的线程并不是启动其他线程,而是执行提交给线程池的任务
                     // 具体来说,当调用execute()或submit()方法向线程池提交任务时,线程池会根据当前的状态和配置来决定如何处理这个任务
+                    // 换句话说,线程池中的线程负责执行提交给线程池的任务,而不是启动其他线程
                     task.run(); // 这里线程池中的线程中执行的任务本身也是一个线程 作为演示
                     task = null;
                 }

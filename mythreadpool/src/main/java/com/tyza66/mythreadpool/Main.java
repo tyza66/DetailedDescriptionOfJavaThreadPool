@@ -30,7 +30,7 @@ public class Main {
 
         // 使用最简单的线程池
         // 新建一个线程池
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        ExecutorService executorService = Executors.newCachedThreadPool(); // 相当于核心线程数是0 用的时候才创建
         // 往线程池中提交任务
         executorService.execute(new Runnable() {
             @Override
