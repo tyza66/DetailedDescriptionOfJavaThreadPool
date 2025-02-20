@@ -149,8 +149,10 @@ public class MyThreadPoolExecutor {
             try {
                 // 判断当前的任务是否为空 如果不为空就执行这个任务 如果当前任务为空就去阻塞队列中取任务
                 // 相当于这个执行完了就尝试再次去取任务执行
-                while (task != null || (task = getTask()) != null) {  // 线程会不会被销毁的关键就在getTask
-                    task.run();
+                while (task != null || (task = getTask()) != null) {  // 线程会不会被销毁的关键就在getTask方法中
+                    // 在Java的ThreadPoolExecutor中,线程池中的线程并不是启动其他线程,而是执行提交给线程池的任务
+                    // 具体来说,当调用execute()或submit()方法向线程池提交任务时,线程池会根据当前的状态和配置来决定如何处理这个任务
+                    task.run(); // 这里线程池中的线程中执行的任务本身也是一个线程 作为演示
                     task = null;
                 }
             } finally {
