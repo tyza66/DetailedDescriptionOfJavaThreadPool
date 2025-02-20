@@ -171,7 +171,7 @@ public class MyThreadPoolExecutor {
             boolean timed = (c > corePoolSize);  // 利用当前线程数是否大于核心线程数来判断是否是非核心线程
             try {
                 Runnable r = timed ?             // 如果是非核心线程就使用poll方法 如果是核心线程就使用take方法
-                        workQueue.poll(keepAliveTime, unit) : // poll方法是从队列中取任务 并且等待一定时间 时间到了就放弃返回null 第一个参数是时间 第二个参数是时间单位
+                        workQueue.poll(keepAliveTime, unit) : // poll方法是从队列中取任务 并且等待一定时间 时间到了就放弃并返回null 第一个参数是时间 第二个参数是时间单位
                         workQueue.take();                     // 而take方法是从队列中取任务 如果队列中没有任务就阻塞等待(一直等) 如果有任务就返回任务 这保证了核心线程的存活
                 if (r != null) return r;
                 timedOut = true;
